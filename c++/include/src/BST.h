@@ -191,7 +191,7 @@ public:
 	}
 };
 
-#include "BSTNestedClasses.hxx"
-#include "BSTMethods.hxx"
+#include "BST_NestedClasses.hxx"
+#include "BST_Methods.hxx"
 
 #endif //BST_H__

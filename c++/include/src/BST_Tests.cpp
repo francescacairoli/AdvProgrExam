@@ -1,5 +1,5 @@
 /**
- * @file BSTtests.cpp
+ * @file BST_Tests.cpp
  * @author Francesca Cairoli
  * @date 30 May 2019
  * @brief Source file to perform various tests on the BST class.

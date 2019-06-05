@@ -1,5 +1,5 @@
 /**
- * @file BSTtestBenchmarks.cpp
+ * @file BSTformances_TestPer.cpp
  * @author Francesca Cairoli
  * @date 31 May 2019
  * @brief Source file to perform Benchmark on the BinarySearchTree class.
@@ -22,11 +22,13 @@ using namespace std;
 
 int N_max=25000; 
 
-// First benchmark: Define 2 BinarySearchTree of int,float. The function will measure time 
-// for find() methods for different N size of the trees and print the result on file. 
-// Input: string with "int"/"float" type of pair<type,type> (for semplicity we consider
-// just one type for couple value-key),empty BinarySearchTree.
-// Accessing element using operator[], so we expect an overestimation.
+// First comparison: 
+// define two BST one of int and one of double. 
+// Functions measure_lookups_time and measure_lookups_time_from_vect measure the time needed 
+// to find N elements in a tree of size N_max (using function find()). 
+
+// The look-up time is measured for an increasing value of N (until N_max), results are stored in a file. 
+
 
 template<class T>
 void measure_lookups_time(T bst,ofstream& results_file){
@@ -59,7 +61,7 @@ void measure_lookups_time_from_vect(T bst,ofstream& results_file, std::vector<Y>
 };
 
 
-void Benchmark_different_type(string type){
+void compare_different_types(string type){
 	ofstream results_file;
     results_file.open ("benchmark_different_"+type+"_1.txt");
 	if(type=="int"){
@@ -94,7 +96,7 @@ void Benchmark_different_type(string type){
 };
 
 //Comparing unbalanced BinarySearchTree, balanced BinarySearchTree,map and unordered_map.
-void Benchmark_Map(){
+void compare_bst_map(){
 	ofstream unbalanced_results_file;
     unbalanced_results_file.open ("benchmark_unbalanced.txt");
     BST<int,int> bst;
@@ -134,8 +136,8 @@ void Benchmark_Map(){
 
 int main(){
 	
-	Benchmark_different_type("int");
-	Benchmark_different_type("double");
-	Benchmark_Map();
+	compare_different_types("int");
+	compare_different_types("double");
+	compare_bst_map();
 	return 0;
 };

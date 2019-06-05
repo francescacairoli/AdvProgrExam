@@ -1,5 +1,5 @@
 /**
- * @file BSTMethods.hxx
+ * @file BST_Methods.hxx
  * @author Francesca Cairoli
  * @date 30 May 2019
  * @brief Header containing method definitions for the BST class.

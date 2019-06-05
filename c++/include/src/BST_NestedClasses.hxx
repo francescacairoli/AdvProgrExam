@@ -1,5 +1,5 @@
 /**
- * @file BSTNestedClasses.hxx
+ * @file BST_NestedClasses.hxx
  * @author Francesca Cairoli
  * @date 31 May 2019
  * @brief Header containing Node, Iterator and ConstIterator nested classes.
