@@ -1,0 +1,69 @@
+\hypertarget{classBST_1_1ConstIterator}{}\section{B\+ST$<$ TK, TV $>$\+:\+:Const\+Iterator Class Reference}
+\label{classBST_1_1ConstIterator}\index{B\+S\+T$<$ T\+K, T\+V $>$\+::\+Const\+Iterator@{B\+S\+T$<$ T\+K, T\+V $>$\+::\+Const\+Iterator}}
+
+
+A constant iterator for the binary search tree class.  
+
+
+
+
+{\ttfamily \#include $<$B\+S\+T\+Nested\+Classes.\+hxx$>$}
+
+
+
+Inheritance diagram for B\+ST$<$ TK, TV $>$\+:\+:Const\+Iterator\+:
+% FIG 0
+
+
+Collaboration diagram for B\+ST$<$ TK, TV $>$\+:\+:Const\+Iterator\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structBST_1_1Node}{Node} $\ast$ \hyperlink{classBST_1_1ConstIterator_ade0e6b8a4bbab47081c31a2a6d8c1b8c}{operator$\ast$} () const
+\begin{DoxyCompactList}\small\item\em Operator it() for deferencing a binary search tree iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBST_1_1ConstIterator_abf74961fd25e946e53e07f358b4bb19a}{B\+ST}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class TK, class TV$>$\newline
+class B\+S\+T$<$ T\+K, T\+V $>$\+::\+Const\+Iterator}
+
+A constant iterator for the binary search tree class. 
+
+The only difference with a normal iterator from which it inherits is the constant pair returned by the deferencing operator. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBST_1_1ConstIterator_ade0e6b8a4bbab47081c31a2a6d8c1b8c}\label{classBST_1_1ConstIterator_ade0e6b8a4bbab47081c31a2a6d8c1b8c}} 
+\index{B\+S\+T\+::\+Const\+Iterator@{B\+S\+T\+::\+Const\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!B\+S\+T\+::\+Const\+Iterator@{B\+S\+T\+::\+Const\+Iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+const \hyperlink{structBST_1_1Node}{Node}$\ast$ \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Const\+Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator it() for deferencing a binary search tree iterator. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::pair$<$\+T\+Key, T\+Value$>$\& Constant reference to current node\textquotesingle{}s data in key, value format. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classBST_1_1ConstIterator_abf74961fd25e946e53e07f358b4bb19a}\label{classBST_1_1ConstIterator_abf74961fd25e946e53e07f358b4bb19a}} 
+\index{B\+S\+T\+::\+Const\+Iterator@{B\+S\+T\+::\+Const\+Iterator}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+S\+T\+::\+Const\+Iterator@{B\+S\+T\+::\+Const\+Iterator}}
+\subsubsection{\texorpdfstring{B\+ST}{BST}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+friend class \hyperlink{classBST}{B\+ST}\hspace{0.3cm}{\ttfamily [friend]}}
+
+Used to give access to get\+Node method 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/src/\hyperlink{BSTNestedClasses_8hxx}{B\+S\+T\+Nested\+Classes.\+hxx}\end{DoxyCompactItemize}

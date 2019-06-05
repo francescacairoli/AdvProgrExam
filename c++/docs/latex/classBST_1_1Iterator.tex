@@ -1,0 +1,158 @@
+\hypertarget{classBST_1_1Iterator}{}\section{B\+ST$<$ TK, TV $>$\+:\+:Iterator Class Reference}
+\label{classBST_1_1Iterator}\index{B\+S\+T$<$ T\+K, T\+V $>$\+::\+Iterator@{B\+S\+T$<$ T\+K, T\+V $>$\+::\+Iterator}}
+
+
+An iterator for the binary search tree class.  
+
+
+
+
+{\ttfamily \#include $<$B\+S\+T\+Nested\+Classes.\+hxx$>$}
+
+
+
+Inheritance diagram for B\+ST$<$ TK, TV $>$\+:\+:Iterator\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBST_1_1Iterator_a469ca54ca68ad46e381e5d86d06a1c37}{Iterator} (\hyperlink{structBST_1_1Node}{Node} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Construct an iterator on current node. \end{DoxyCompactList}\item 
+\hyperlink{structBST_1_1Node}{Node} $\ast$ \hyperlink{classBST_1_1Iterator_a50c96d5ed9de2db03796635e62b74ca8}{operator$\ast$} () const
+\begin{DoxyCompactList}\small\item\em Operator it() for deferencing a binary search tree iterator. \end{DoxyCompactList}\item 
+\hyperlink{classBST_1_1Iterator}{Iterator} \& \hyperlink{classBST_1_1Iterator_a65087decb04c6d422a115bbec0be1f2c}{operator++} ()
+\begin{DoxyCompactList}\small\item\em Operator ++it to advance iterator to the next node. \end{DoxyCompactList}\item 
+\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST_1_1Iterator_ab4da22880469dff452dfe4f393cbcd29}{operator++} (int)
+\begin{DoxyCompactList}\small\item\em Operator it++ to advance iterator to the next node. \end{DoxyCompactList}\item 
+bool \hyperlink{classBST_1_1Iterator_aceb00c5bee59057733bb7fcae044550c}{operator==} (const \hyperlink{classBST_1_1Iterator}{Iterator} \&it)
+\begin{DoxyCompactList}\small\item\em Operator == to check for iterators equality. \end{DoxyCompactList}\item 
+bool \hyperlink{classBST_1_1Iterator_aaa18a2696f5a0b7d48cc2e7a9c2ce2c1}{operator!=} (const \hyperlink{classBST_1_1Iterator}{Iterator} \&it)
+\begin{DoxyCompactList}\small\item\em Operator != to check for iterators inequality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBST_1_1Iterator_abf74961fd25e946e53e07f358b4bb19a}{B\+ST}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class TK, class TV$>$\newline
+class B\+S\+T$<$ T\+K, T\+V $>$\+::\+Iterator}
+
+An iterator for the binary search tree class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBST_1_1Iterator_a469ca54ca68ad46e381e5d86d06a1c37}\label{classBST_1_1Iterator_a469ca54ca68ad46e381e5d86d06a1c37}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{Iterator()}{Iterator()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Iterator\+::\+Iterator (\begin{DoxyParamCaption}\item[{\hyperlink{structBST_1_1Node}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an iterator on current node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The node on which the iterator is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBST_1_1Iterator_aaa18a2696f5a0b7d48cc2e7a9c2ce2c1}\label{classBST_1_1Iterator_aaa18a2696f5a0b7d48cc2e7a9c2ce2c1}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+bool \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classBST_1_1Iterator}{Iterator} \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator != to check for iterators inequality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The iterator to be compared with this one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if iterators point to the same node, else true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_1_1Iterator_a50c96d5ed9de2db03796635e62b74ca8}\label{classBST_1_1Iterator_a50c96d5ed9de2db03796635e62b74ca8}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{structBST_1_1Node}{Node}$\ast$ \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator it() for deferencing a binary search tree iterator. 
+
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$\+T\+Key, T\+Value$>$\& Reference to current node\textquotesingle{}s data in key, value format. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_1_1Iterator_a65087decb04c6d422a115bbec0be1f2c}\label{classBST_1_1Iterator_a65087decb04c6d422a115bbec0be1f2c}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST_1_1Iterator}{Iterator}\& \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator ++it to advance iterator to the next node. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1Iterator}{Iterator}\& Reference to an iterator pointing on the next node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_1_1Iterator_ab4da22880469dff452dfe4f393cbcd29}\label{classBST_1_1Iterator_ab4da22880469dff452dfe4f393cbcd29}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator it++ to advance iterator to the next node. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1Iterator}{Iterator} Value of the current iterator before advancing it to the next node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_1_1Iterator_aceb00c5bee59057733bb7fcae044550c}\label{classBST_1_1Iterator_aceb00c5bee59057733bb7fcae044550c}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+bool \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::Iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classBST_1_1Iterator}{Iterator} \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator == to check for iterators equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The iterator to be compared with this one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if iterators point to the same node, else false 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classBST_1_1Iterator_abf74961fd25e946e53e07f358b4bb19a}\label{classBST_1_1Iterator_abf74961fd25e946e53e07f358b4bb19a}} 
+\index{B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+S\+T\+::\+Iterator@{B\+S\+T\+::\+Iterator}}
+\subsubsection{\texorpdfstring{B\+ST}{BST}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+friend class \hyperlink{classBST}{B\+ST}\hspace{0.3cm}{\ttfamily [friend]}}
+
+Used to give access to get\+Node method 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/src/\hyperlink{BSTNestedClasses_8hxx}{B\+S\+T\+Nested\+Classes.\+hxx}\end{DoxyCompactItemize}

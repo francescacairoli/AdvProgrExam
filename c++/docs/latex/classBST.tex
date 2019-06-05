@@ -1,0 +1,374 @@
+\hypertarget{classBST}{}\section{B\+ST$<$ TK, TV $>$ Class Template Reference}
+\label{classBST}\index{B\+S\+T$<$ T\+K, T\+V $>$@{B\+S\+T$<$ T\+K, T\+V $>$}}
+
+
+Templated implementation of a binary search tree.  
+
+
+
+
+{\ttfamily \#include $<$B\+S\+T.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBST_1_1ConstIterator}{Const\+Iterator}
+\begin{DoxyCompactList}\small\item\em A constant iterator for the binary search tree class. \end{DoxyCompactList}\item 
+class \hyperlink{classBST_1_1Iterator}{Iterator}
+\begin{DoxyCompactList}\small\item\em An iterator for the binary search tree class. \end{DoxyCompactList}\item 
+struct \hyperlink{structBST_1_1Node}{Node}
+\begin{DoxyCompactList}\small\item\em A node of the binary search tree with two children nodes and one parent node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBST_a60637cc47902581dc05696f825cb3286}\label{classBST_a60637cc47902581dc05696f825cb3286}} 
+\hyperlink{classBST_a60637cc47902581dc05696f825cb3286}{B\+ST} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST_acb3f286124195e1f9967b6fb752f69f4}{B\+ST} (std\+::pair$<$ TK, TV $>$ d)
+\begin{DoxyCompactList}\small\item\em Constructor for binary search tree with root node. \end{DoxyCompactList}\item 
+\hyperlink{classBST_a2362c8e6d3746ed7480d5a920902a067}{B\+ST} (const \hyperlink{classBST}{B\+ST} \&bst)
+\begin{DoxyCompactList}\small\item\em Copy constructor for binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST_a291e3ac348c04e55fe432e4dc9ce05c9}{B\+ST} (\hyperlink{classBST}{B\+ST} \&\&bst) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor for binary search tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_a9a57d3b378b474ec07fd0339b3aa8774}\label{classBST_a9a57d3b378b474ec07fd0339b3aa8774}} 
+int {\bfseries get\+Size} ()
+\item 
+\mbox{\Hypertarget{classBST_a4638d6aec3a8fefc9ca124672b7c3def}\label{classBST_a4638d6aec3a8fefc9ca124672b7c3def}} 
+int {\bfseries get\+Height} ()
+\item 
+void \hyperlink{classBST_a21b2107c1e79e2d5fa9ca42952e62986}{insert} (std\+::pair$<$ TK, TV $>$ kv)
+\begin{DoxyCompactList}\small\item\em Insert a new node in the binary search tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_a005534f138d79356966022b49ef69d77}\label{classBST_a005534f138d79356966022b49ef69d77}} 
+void \hyperlink{classBST_a005534f138d79356966022b49ef69d77}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clears all the elements of the tree. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classBST_a937aa8f8e587fbb1b7bf655294f15d82}{print\+Ordered\+List} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Prints nodes in ascending key order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_a9f9a0ada77dc770850b8231e269b280e}\label{classBST_a9f9a0ada77dc770850b8231e269b280e}} 
+void \hyperlink{classBST_a9f9a0ada77dc770850b8231e269b280e}{print\+Structure} (std\+::string(\&f)(TK), std\+::string null\+\_\+str=\char`\"{}X\+XX\char`\"{}, char empty=\textquotesingle{} \textquotesingle{}) const
+\begin{DoxyCompactList}\small\item\em Print the tree structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_aa4efb0ac8330a43d5a0d688696d49376}\label{classBST_aa4efb0ac8330a43d5a0d688696d49376}} 
+std\+::string {\bfseries get\+Key\+String} (int index, std\+::string(\&f)(TK), std\+::string null\+\_\+str=\char`\"{}X\+XX\char`\"{}) const
+\item 
+\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST_af7296223f917c8a457d2081999636e43}{find} (TK k) const
+\begin{DoxyCompactList}\small\item\em Used to find a node inside the tree. \end{DoxyCompactList}\item 
+void \hyperlink{classBST_a812b874214dac2bc44cbd20144d03533}{balance} ()
+\begin{DoxyCompactList}\small\item\em Balances the tree to preserve its performances. \end{DoxyCompactList}\item 
+\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST_a627f8f8fa85960bd6a52175b42d66d56}{begin} () const
+\begin{DoxyCompactList}\small\item\em Used to begin an iteration on the binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST_a57b56c3f93a9816de6df6435966eacc5}{end} () const
+\begin{DoxyCompactList}\small\item\em Used to finish an iteration on the binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST_1_1ConstIterator}{Const\+Iterator} \hyperlink{classBST_a58c42a2fc86f0ed09f5d7a43b30d7704}{cbegin} () const
+\begin{DoxyCompactList}\small\item\em Used to begin an iteration on the binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST_1_1ConstIterator}{Const\+Iterator} \hyperlink{classBST_a3df704e278d2c00fe8ec1b41701e4712}{cend} () const
+\begin{DoxyCompactList}\small\item\em Used to finish an iteration on the binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST}{B\+ST} \& \hyperlink{classBST_ad5b24356902b7c8bbf265d1f6f683c81}{operator=} (const \hyperlink{classBST}{B\+ST} \&bst)
+\begin{DoxyCompactList}\small\item\em Copy assignment for binary search tree. \end{DoxyCompactList}\item 
+\hyperlink{classBST}{B\+ST} \& \hyperlink{classBST_ae2d6d6425760adec3ed7ee01244a2ca7}{operator=} (\hyperlink{classBST}{B\+ST} \&\&bst)
+\begin{DoxyCompactList}\small\item\em Move assignment for binary search tree. \end{DoxyCompactList}\item 
+TV \& \hyperlink{classBST_acc8b8d333853756891d31f14c2ea2259}{operator\mbox{[}$\,$\mbox{]}} (const TK \&key)
+\begin{DoxyCompactList}\small\item\em Operator \mbox{[}\mbox{]} to access a node value in the tree or insert a new one. \end{DoxyCompactList}\item 
+const TV \& \hyperlink{classBST_a45730a0b118f4a29b0c336c06069b7a3}{operator\mbox{[}$\,$\mbox{]}} (const TK \&key) const
+\begin{DoxyCompactList}\small\item\em Constant implementation of operator \mbox{[}\mbox{]} to access a node value in the tree or insert a new one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classBST_abff6369e697a8c1563e1e5db5099dd4b}{operator$<$$<$} (std\+::ostream \&os, \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \&bst)
+\begin{DoxyCompactList}\small\item\em Operator $<$$<$ to print the binary search tree in ascending key order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class TK, class TV$>$\newline
+class B\+S\+T$<$ T\+K, T\+V $>$}
+
+Templated implementation of a binary search tree. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Key} & Type of node keys, used for ordering. \\
+\hline
+{\em T\+Value} & Type of node values. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBST_acb3f286124195e1f9967b6fb752f69f4}\label{classBST_acb3f286124195e1f9967b6fb752f69f4}} 
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{B\+S\+T()}{BST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::\hyperlink{classBST}{B\+ST} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ TK, TV $>$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for binary search tree with root node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The key,value pair for root node. \\
+\hline
+{\em c} & The custom comparison function for tree nodes, not mandatory. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a2362c8e6d3746ed7480d5a920902a067}\label{classBST_a2362c8e6d3746ed7480d5a920902a067}} 
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{B\+S\+T()}{BST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::\hyperlink{classBST}{B\+ST} (\begin{DoxyParamCaption}\item[{const \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \&}]{bst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor for binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bst} & The binary search tree to be copied into a new one.\\
+\hline
+\end{DoxyParams}
+The method performs a deep copy of the tree using the copy private method. \mbox{\Hypertarget{classBST_a291e3ac348c04e55fe432e4dc9ce05c9}\label{classBST_a291e3ac348c04e55fe432e4dc9ce05c9}} 
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{B\+S\+T()}{BST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::\hyperlink{classBST}{B\+ST} (\begin{DoxyParamCaption}\item[{\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \&\&}]{bst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Move constructor for binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bst} & The binary search tree to be moved into a new one. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBST_a812b874214dac2bc44cbd20144d03533}\label{classBST_a812b874214dac2bc44cbd20144d03533}} 
+\index{B\+ST@{B\+ST}!balance@{balance}}
+\index{balance@{balance}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{balance()}{balance()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+void \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Balances the tree to preserve its performances. 
+
+The method is inspired from the Day algorithm, taking full advantage of the iterators and the methods we already created to make it as simple as possible. \mbox{\Hypertarget{classBST_a627f8f8fa85960bd6a52175b42d66d56}\label{classBST_a627f8f8fa85960bd6a52175b42d66d56}} 
+\index{B\+ST@{B\+ST}!begin@{begin}}
+\index{begin@{begin}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Used to begin an iteration on the binary search tree. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1Iterator}{Iterator} An iterator to the leftmost node of the tree. aka the one with the lowest key value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a58c42a2fc86f0ed09f5d7a43b30d7704}\label{classBST_a58c42a2fc86f0ed09f5d7a43b30d7704}} 
+\index{B\+ST@{B\+ST}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::\hyperlink{classBST_1_1ConstIterator}{Const\+Iterator} \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Used to begin an iteration on the binary search tree. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1ConstIterator}{Const\+Iterator} A constant iterator to the leftmost node of the tree. aka the one with the lowest key value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a3df704e278d2c00fe8ec1b41701e4712}\label{classBST_a3df704e278d2c00fe8ec1b41701e4712}} 
+\index{B\+ST@{B\+ST}!cend@{cend}}
+\index{cend@{cend}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST_1_1ConstIterator}{Const\+Iterator} \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to finish an iteration on the binary search tree. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1ConstIterator}{Const\+Iterator} Returns a constant iterator to nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a57b56c3f93a9816de6df6435966eacc5}\label{classBST_a57b56c3f93a9816de6df6435966eacc5}} 
+\index{B\+ST@{B\+ST}!end@{end}}
+\index{end@{end}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to finish an iteration on the binary search tree. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1Iterator}{Iterator} Returns an iterator to nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_af7296223f917c8a457d2081999636e43}\label{classBST_af7296223f917c8a457d2081999636e43}} 
+\index{B\+ST@{B\+ST}!find@{find}}
+\index{find@{find}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::\hyperlink{classBST_1_1Iterator}{Iterator} \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::find (\begin{DoxyParamCaption}\item[{TK}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Used to find a node inside the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the node to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classBST_1_1Iterator}{Iterator} An iterator to the node if it\textquotesingle{}s found, else to \hyperlink{classBST_a57b56c3f93a9816de6df6435966eacc5}{end()}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a21b2107c1e79e2d5fa9ca42952e62986}\label{classBST_a21b2107c1e79e2d5fa9ca42952e62986}} 
+\index{B\+ST@{B\+ST}!insert@{insert}}
+\index{insert@{insert}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+void \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::pair$<$ TK, TV $>$}]{kv }\end{DoxyParamCaption})}
+
+
+
+Insert a new node in the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The key,value pair to be inserted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the insert operation is successful, else false.
+\end{DoxyReturn}
+If a node with the same key is already present inside the tree, the insert operation will simply return false without performing any action. This design choice has been taken in order to keep the implementation as simple as possible. \mbox{\Hypertarget{classBST_ad5b24356902b7c8bbf265d1f6f683c81}\label{classBST_ad5b24356902b7c8bbf265d1f6f683c81}} 
+\index{B\+ST@{B\+ST}!operator=@{operator=}}
+\index{operator=@{operator=}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \& \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \&}]{bst }\end{DoxyParamCaption})}
+
+
+
+Copy assignment for binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bst} & The binary search tree to be copied into an existing one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Binary\+Search\+Tree\& The modified existing tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_ae2d6d6425760adec3ed7ee01244a2ca7}\label{classBST_ae2d6d6425760adec3ed7ee01244a2ca7}} 
+\index{B\+ST@{B\+ST}!operator=@{operator=}}
+\index{operator=@{operator=}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \& \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \&\&}]{bst }\end{DoxyParamCaption})}
+
+
+
+Move assignment for binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bst} & The binary search tree to be moved into an existing one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Binary\+Search\+Tree\& The modified existing tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_acc8b8d333853756891d31f14c2ea2259}\label{classBST_acc8b8d333853756891d31f14c2ea2259}} 
+\index{B\+ST@{B\+ST}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+TV \& \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const TK \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Operator \mbox{[}\mbox{]} to access a node value in the tree or insert a new one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the node which value should be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+Value\& The value of the accessed node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a45730a0b118f4a29b0c336c06069b7a3}\label{classBST_a45730a0b118f4a29b0c336c06069b7a3}} 
+\index{B\+ST@{B\+ST}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+const TV \& \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const TK \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Constant implementation of operator \mbox{[}\mbox{]} to access a node value in the tree or insert a new one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the node which value should be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+Value\& The value of the accessed node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a937aa8f8e587fbb1b7bf655294f15d82}\label{classBST_a937aa8f8e587fbb1b7bf655294f15d82}} 
+\index{B\+ST@{B\+ST}!print\+Ordered\+List@{print\+Ordered\+List}}
+\index{print\+Ordered\+List@{print\+Ordered\+List}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{print\+Ordered\+List()}{printOrderedList()}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+std\+::ostream \& \hyperlink{classBST}{B\+ST}$<$ TK, TV $>$\+::print\+Ordered\+List (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Prints nodes in ascending key order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The stream to which nodes are sent. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classBST_abff6369e697a8c1563e1e5db5099dd4b}\label{classBST_abff6369e697a8c1563e1e5db5099dd4b}} 
+\index{B\+ST@{B\+ST}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$class TK , class TV $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\hyperlink{classBST}{B\+ST}$<$ TK, TV $>$ \&}]{bst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Operator $<$$<$ to print the binary search tree in ascending key order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to which the strings to be printed are appended. \\
+\hline
+{\em bst} & The binary search tree instance to be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& The output stream to which strings have been appended. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/src/B\+S\+T.\+h\item 
+include/src/\hyperlink{BSTMethods_8hxx}{B\+S\+T\+Methods.\+hxx}\end{DoxyCompactItemize}

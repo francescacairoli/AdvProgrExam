@@ -1,0 +1,18 @@
+digraph "include/src/BSTMethods.hxx"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="include/src/BSTMethods.hxx",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 [label="BST.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$BST_8h_source.html"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="memory",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="BSTNestedClasses.hxx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$BSTNestedClasses_8hxx.html",tooltip="Header containing Node, Iterator and ConstIterator nested classes. "];
+  Node5 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node0 [color="midnightblue",fontsize="10",style="solid"];
+}
