@@ -1,41 +1,42 @@
 /**
- * @file BST_NestedClasses.hxx
+ * @file BSTNestedClasses.hxx
  * @author Francesca Cairoli
- * @date 31 May 2019
- * @brief Header containing Node, Iterator and ConstIterator nested classes.
+ * @date 17 June 2019
+ * @brief Header containing the classes nested in BST: Node, Iterator and ConstIterator.
  */
 
 #include "BST.h"
 
 /**
- * @brief A node of the binary search tree with two children nodes and one parent node.
+ * @brief A template node of the template binary search tree with two children nodes and one parent node.
  */
 template <class TK,class TV>
 struct BST<TK, TV>::Node
 {
-	/** Node's data in key-value format. 
+	/** Key-value pair of the node. 
 	 * Const was added to the key to ensure tree consistency.
 	*/
 	std::pair<const TK, TV> keyvalue;
-	/** Node's left child node (smaller key). */
+
+	/** Node's left child node (child with lower key). */
 	std::unique_ptr<Node> left;
-	/** Node's right child node (bigger key). */
+	/** Node's right child node (child with larger key). */
 	std::unique_ptr<Node> right;
 	/** Node's parent node. */
 	Node * parent;
+	
 	/**
 	 * @brief Default constructor of node
-	 * This constructor is used only to create the pseudoRoot node in the DSW algorithm.
 	 */
 	Node() {}
 	/**
-	 * @brief Construct a new Node object without parent.
-	 * @param d The data to be inserted into the node.
+	 * @brief Construct a new Node with a given key-value pair but without parent and childrens.
+	 * @param kv The key-value to be inserted into the node.
 	 */
 	Node(std::pair<TK, TV> kv): keyvalue{kv}, left{nullptr}, right{nullptr}, parent{nullptr} {}
 	/**
-	 * @brief Construct a new Node object with a parent.
-	 * @param d The data to be inserted into the node.
+	 * @brief Construct a new Node object with a given key-value pair and a parent.
+	 * @param kv The key-value to be inserted into the node.
 	 * @param p The parent of the node to be constructed.
 	 */
 	Node(std::pair<TK, TV> kv, Node* p) : keyvalue{kv}, left{nullptr}, right{nullptr}, parent{p} {}
@@ -50,14 +51,17 @@ struct BST<TK, TV>::Node
 	~Node() = default;
 
 	/**
-	 * @brief  utility function
+	 * @brief  Utility recursive function that returns a pointer to the lestmost node, i.e., the node with the lowest key.
 	 */
 	Node* leftmostdescent(){
 		if(left) return left->leftmostdescent();
 		return this;
 	}
 	/**
-	 * @brief utility function
+	 * @brief  Utility recursive function that returns a pointer to first right ancestor. 
+
+	 If the current node is the left child of its parent ir return parent, otherwise it check wheter parent is a left child of its own parent.
+	 The procedure terminates when an ancestor is found to be the left child of its own parent, otherwise a nullptr is returned.
 	 */
 	Node* firstrightancestor(){
 		if(parent)
@@ -69,38 +73,35 @@ struct BST<TK, TV>::Node
 };
 
 /**
- * @brief An iterator for the binary search tree class.
+ * @brief An iterator for the BST class.
  */
 template <class TK,class TV>
 class BST<TK, TV>::Iterator
 {
-	/** Used to give access to getNode method */
-	friend class BST;
-	/** Alias to make names shorter and intuitive*/
+	/** Alias to make the notation easier */
 	using Node = BST<TK, TV>::Node;
+
 private:
 	/** The node to which the iterator is currently referring. */
 	Node * _n;
-	/**
-	 * @brief Returns a pointer to the node pointed to by the iterator.
-	 */
-	Node * getNode() { return _n; }
+
 public:
 	/**
-	 * @brief Construct an iterator on current node.
+	 * @brief Construct an iterator starting at node n.
 	 * @param n The node on which the iterator is constructed.
 	 */
 	Iterator(Node * n) : _n{n} {}
 	/**
-	 * @brief Operator it() for deferencing a binary search tree iterator.
-	 * @return std::pair<TKey, TValue>& Reference to current node's data in key, value format.
+	 * @brief Operator for deferencing a BST iterator.
+	 * @return Node* Returns a pointer to the Node referred to by the iterator.
 	 */
 	Node* operator*() const{ return _n; }
 	/**
-	 * @brief Operator ++it to advance iterator to the next node.
-	 * @return Iterator& Reference to an iterator pointing on the next node.
-	 */
+	 * @brief Operator ++it to advance the iterator to the successive node.
+	 * @return Iterator& Returns a reference to an iterator pointing on the next node.
 
+	 The method uses two recursive utility functions of Node: leftmostdescent and firstrightancestor.
+	 */
 	Iterator& operator++(){
 		if(_n){
 			if(_n->right)
@@ -111,8 +112,8 @@ public:
 		return *this;
 	}	
 	/**
-	 * @brief Operator it++ to advance iterator to the next node.
-	 * @return Iterator Value of the current iterator before advancing it to the next node.
+	 * @brief Operator it++ to advance the iterator to the next node.
+	 * @return Iterator Returns the value (dereference) of the current iterator before advancing it to the next node.
 	 */
 	Iterator operator++(int)
 	{
@@ -122,45 +123,37 @@ public:
 	}
 	/**
 	 * @brief Operator == to check for iterators equality.
-	 * @param other The iterator to be compared with this one.
-	 * @return True if iterators point to the same node, else false
+	 * @param it The iterator to be compared with this one.
+	 * @return bool Returns True if the two iterators point to the same node, False otherwise.
 	 */
 	bool operator==(const Iterator& it){return _n == it._n;}
 
 	/**
 	 * @brief Operator != to check for iterators inequality.
-	 * @param other The iterator to be compared with this one.
-	 * @return False if iterators point to the same node, else true.
+	 * @param it The iterator to be compared with this one.
+	 * @return bool Returns False if the two iterators point to the same node, True otherwise.
 	 */
 	bool operator!=(const Iterator& it){return _n != it._n;}
 };
 
 /**
- * @brief A constant iterator for the binary search tree class.
+ * @brief A constant iterator for the BST class.
  * 
- * The only difference with a normal iterator from which it inherits is the 
- * constant pair returned by the deferencing operator.
+ * The only difference with a normal iterator, from which it inherits, is the deferencing operator.
  */
 template <class TK,class TV>
 class BST<TK,TV>::ConstIterator : 
 public BST<TK,TV>::Iterator
 {
-	/** Used to give access to getNode method */
-	friend class BST;
-	/** Alias to make names shorter and intuitive*/
+	/** Alias to make the notation easier */
 	using Iterator = BST<TK, TV>::Iterator;
-private:
-	/**
-	 * @brief Returns a constant pointer to the node pointed to by the iterator.
-	 */
-	const Node * getNode() const { return Iterator::getNode(); }
+
 public:
 	/** Uses the same method of the base class. */
 	using Iterator::Iterator;
 	/**
-	 * @brief Operator it() for deferencing a binary search tree iterator.
-	 * @return const std::pair<TKey, TValue>& Constant reference to current 
-	 * node's data in key, value format.
+	 * @brief Operator for deferencing a BST const iterator.
+	 * @return Node* Returns a const pointer to the Node referred to by the iterator.
 	 */
 	const Node* operator*() const{ return Iterator::operator*(); }
 };

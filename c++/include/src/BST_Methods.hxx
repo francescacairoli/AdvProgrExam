@@ -1,5 +1,5 @@
 /**
- * @file BST_Methods.hxx
+ * @file BSTMethods.hxx
  * @author Francesca Cairoli
  * @date 30 May 2019
  * @brief Header containing method definitions for the BST class.
@@ -90,13 +90,13 @@ std::ostream& BST<TK, TV>::printOrderedList(std::ostream& os) const
 
 
 template <class TK,class TV>
-typename BST<TK, TV>::Iterator BST<TK, TV>::find(TK k) const
+typename BST<TK, TV>::Iterator BST<TK, TV>::find(TK key) const
 {
     Node * current= root.get();
     while(current)
-        if(k == current->keyvalue.first)
+        if(key == current->keyvalue.first)
             return Iterator(current);
-        else if(k < current->keyvalue.first)
+        else if(key < current->keyvalue.first)
             current = current->left.get();
         else
             current = current->right.get();
@@ -138,7 +138,7 @@ typename BST<TK, TV>::ConstIterator BST<TK, TV>::cbegin() const
 template <class TK,class TV>
 BST<TK, TV>& BST<TK, TV>::operator=(const BST& bst)
 {
-    clear();
+    clear(); 
     copy(bst.root);
     return *this;
 }
@@ -154,8 +154,7 @@ template <class TK,class TV>
 TV& BST<TK, TV>::operator[](const TK& key)
 {
     std::pair<TK, TV> pair{key, TV{}};
-    insert(pair); // Does nothing if node is already present
-    Iterator it{find(key)};
+    Iterator it{*find(key)};
     return (*it)->keyvalue.second;
 }
 
@@ -163,7 +162,7 @@ template <class TK,class TV>
 const TV& BST<TK, TV>::operator[](const TK& key) const
 {
     std::pair<TK, TV> pair{key, TV{}};
-    ConstIterator it{find(key).getNode()};
+    ConstIterator it{*find(key)}; // dereferencing operator *
     if (it == cend())
     {
         throw; // The key is not present in the tree.
@@ -195,7 +194,7 @@ void BST<TK, TV>::printStructure(std::string (&f)(TK), std::string null_str, cha
     int elements = 1;
     elements = elements << height;
     int newline = 1;
-    int space_index = height-1;
+    int space_index = height-1; // at each layer the space between nodes changes
 
     std::cout<<std::string( (1<<space_index) - 1, empty);
 

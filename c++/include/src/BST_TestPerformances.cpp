@@ -1,8 +1,8 @@
 /**
- * @file BSTformances_TestPer.cpp
+ * @file BSTtestPerformances.cpp
  * @author Francesca Cairoli
- * @date 31 May 2019
- * @brief Source file to perform Benchmark on the BinarySearchTree class.
+ * @date 17 June 2019
+ * @brief Source file to test the performances of the BST class.
  */
 
 #include "BST.h"
@@ -22,13 +22,9 @@ using namespace std;
 
 int N_max=25000; 
 
-// First comparison: 
-// define two BST one of int and one of double. 
-// Functions measure_lookups_time and measure_lookups_time_from_vect measure the time needed 
-// to find N elements in a tree of size N_max (using function find()). 
-
-// The look-up time is measured for an increasing value of N (until N_max), results are stored in a file. 
-
+// Test number one:
+// Define two BST of int and float respectively and measure the time required to find N different elements in a BST of size N.
+// Results are printed on a file. 
 
 template<class T>
 void measure_lookups_time(T bst,ofstream& results_file){
@@ -63,7 +59,7 @@ void measure_lookups_time_from_vect(T bst,ofstream& results_file, std::vector<Y>
 
 void compare_different_types(string type){
 	ofstream results_file;
-    results_file.open ("benchmark_different_"+type+"_1.txt");
+    results_file.open ("performance_different_types"+type+"_1.txt");
 	if(type=="int"){
 		BST<int,int> bst;
         std::vector<int> val;
@@ -95,10 +91,12 @@ void compare_different_types(string type){
 
 };
 
-//Comparing unbalanced BinarySearchTree, balanced BinarySearchTree,map and unordered_map.
+// Test number two:
+// Compare the performances of unbalanced BST, balanced BST, map and unordered_map.
+
 void compare_bst_map(){
 	ofstream unbalanced_results_file;
-    unbalanced_results_file.open ("benchmark_unbalanced.txt");
+    unbalanced_results_file.open ("performance_unbalanced.txt");
     BST<int,int> bst;
     for(int i=0;i<N_max;++i){
       	pair<int, int> pair{i,i};
@@ -108,14 +106,14 @@ void compare_bst_map(){
     unbalanced_results_file.close();
 
 	ofstream balanced_results_file;
-	balanced_results_file.open ("benchmark_balanced.txt");
+	balanced_results_file.open ("performance_balanced.txt");
 	bst.balance();
 	measure_lookups_time(bst,balanced_results_file);
 	balanced_results_file.close();
 
 	map<int,int> bst_map;
 	ofstream map_results_file;
-    map_results_file.open ("benchmark_map.txt");
+    map_results_file.open ("performance_map.txt");
 	for(int i=0;i<N_max;++i){
         pair<int, int> pair{i,i};
         bst_map.insert(pair);
@@ -125,7 +123,7 @@ void compare_bst_map(){
 
 	unordered_map<int,int> bst_umap;
     ofstream umap_results_file;
-    umap_results_file.open ("benchmark_unordered_map.txt");
+    umap_results_file.open ("performance_unordered_map.txt");
     for(int i=0;i<N_max;++i){
         pair<int, int> pair{i,i};
         bst_umap.insert(pair);
