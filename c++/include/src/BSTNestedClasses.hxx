@@ -78,7 +78,6 @@ struct BST<TK, TV>::Node
 template <class TK,class TV>
 class BST<TK, TV>::Iterator
 {
-	friend class BST;
 	/** Alias to make the notation easier */
 	using Node = BST<TK, TV>::Node;
 
@@ -146,7 +145,6 @@ template <class TK,class TV>
 class BST<TK,TV>::ConstIterator : 
 public BST<TK,TV>::Iterator
 {
-	friend class BST;
 	/** Alias to make the notation easier */
 	using Iterator = BST<TK, TV>::Iterator;
 
