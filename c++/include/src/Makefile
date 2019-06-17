@@ -3,8 +3,8 @@ PERFORMANCE = performances.o
 
 DEFINES = NONE
 CXX = c++
-TESTSRC = BST_Tests.cpp 
-PERFSRC = BST_TestPerformances.cpp
+TESTSRC = BSTtests.cpp 
+PERFSRC = BSTtestPerformances.cpp
 CXXFLAGS = -std=c++11 -Wall -Wextra
 IFLAGS = -I include
 DFLAGS = -D $(DEFINES)

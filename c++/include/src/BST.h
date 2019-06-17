@@ -1,8 +1,8 @@
 /**
- * @file BinarySearchTree.h
+ * @file BST.h
  * @author Francesca Cairoli
- * @date 30 mAy 2019
- * @brief Header containing variables and method names for the BinarySearchTree class.
+ * @date 17 June 2019
+ * @brief Header for the BST class containing the signature of the variables and the methods of a template binary search tree.
  */
 
 #include <iostream> // needed for the << operator
@@ -22,7 +22,7 @@ class BST
 {
 private:
 	/**
-	 * @brief A node of the binary search tree with two children nodes and one parent node.
+	 * @brief A node of the binary search tree. The node contains also information about its two children nodes and its parant node.
 	 */
 	struct Node;
 
@@ -39,7 +39,11 @@ public:
 private:
 	/** Root node of the binary search tree. */
 	std::unique_ptr<Node> root;
+
+	/** Number of nodes in the binary search tree */
 	int size;
+
+	/** Number of horizontal layers (generations) in the binary search tree. */
 	int height;
 
 	/**
@@ -49,10 +53,10 @@ private:
 	void copy(const std::unique_ptr<Node>& node);
 
 	/**
-	 * @brief Recursive private method to builds a balanced tree from an ordered vector of pairs.
-	 * @param v Orderer vector of pairs in key,value format.
-	 * @param start The id of the first element of the list, for recursion purposes.
-	 * @param end The id of the last element of the list, for recursion purposes.
+	 * @brief Recursive private method to builds a balanced tree from an ordered vector of key-value pairs.
+	 * @param v Orderer vector of  key-value pairs.
+	 * @param start The index representing the starting point in the vector, information needed for the recursion.
+	 * @param end The index representing the ending point in the vector, information needed for the recursion.
 	 */
 	void rebuildBalancedTree(std::vector<std::pair<TK, TV>>& v, int start, int end);
 
@@ -60,19 +64,19 @@ private:
 
 public:
 	/**
-	 * @brief Default constructor for binary search tree.
+	 * @brief Default constructor for the binary search tree.
 	 */
-	BST() {}
+	BST(): size{0}, height{0} {}
 	/**
-	 * @brief Constructor for binary search tree given a root node.
+	 * @brief Constructor for the binary search tree given a root node.
 	 * @param d The key,value pair for the root node.
 	 */
-	BST(std::pair<TK, TV> d): root{new Node{d}} {}
+	BST(std::pair<TK, TV> d): root{new Node{d}}, size{1}, height{1} {}
 	/**
-	 * @brief Copy constructor for the binary search tree.
-	 * @param bst The binary search tree to be copied.
+	 * @brief Copy constructor for the binary search tree. It initializes a BST class by making a copy of an object of the same class.
+	 * @param bst The BST to be copied.
 	 * 
-	 * The method uses the copy private method.
+	 * The constructor uses the recursive private copy method.
 	 */
 	BST(const BST& bst) { copy(bst.root); }
 	/**
@@ -98,7 +102,7 @@ public:
 	 * @param kv The key,value pair to be inserted.
 	 * 
 	 * If a node with the same key is already present inside the tree, 
-	 * the insert method does not perform any action. 
+	 * the insert method substitute the value associated to that key with the new one. 
 	 */
 	void insert(std::pair<TK, TV> kv);
 	/**
@@ -112,76 +116,79 @@ public:
 	std::ostream& printOrderedList(std::ostream& os) const;
 
 	/**
-	 * @brief Print the tree structure
+	 * @brief Print the tree structure.
+	 * @param f(TK) function to convert the template key type to a string
+	 * @param null_str string used to graphically represent the empty positions in the binary search tree.
+	 * @param empty char used as unit for graphical separation between nodes.
+
+	Uses the method getKeyString.
 	 */
 	void printStructure(std::string (&f)(TK), std::string null_str = "XXX", char empty = ' ') const;
 
+	/**
+	 * @brief Returns the keys of the binary search tree as strings.
+
+	 */
 	std::string getKeyString(int index, std::string (&f)(TK), std::string null_str = "XXX") const;
 	/**
-	 * @brief Used to find a node inside the tree.
+	 * @brief Method used to find a node inside the binary search tree.
 	 * @param key The key of the node to be found.
-	 * @return Iterator An iterator to the node if it's found, else to end().
+	 * @return Iterator An iterator to the node if the node was found, otherwise it returns an iterator to nullptr.
 	 */
-	Iterator find(TK k) const;
+	Iterator find(TK key) const;
 	/**
-	 * @brief Balances the tree to preserve its performances.
-	 * 
-	 * The method is inspired from the Day algorithm, taking full
-	 * advantage of the iterators and the methods we already created
-	 * to make it as simple as possible.
+	 * @brief Balances the tree structure.
 	 */
 	void balance();
 	/**
 	 * @brief Used to begin an iteration on the binary search tree.
-	 * @return Iterator An iterator to the leftmost node of the tree. 
-	 * aka the one with the lowest key value.
+	 * @return Iterator An iterator to the node with the lowest key. 
 	 */
 	Iterator begin() const;
 	/**
-	 * @brief Used to finish an iteration on the binary search tree.
-	 * @return Iterator Returns an iterator to nullptr.
+	 * @brief Used to end an iteration on the binary search tree.
+	 * @return Iterator An iterator to nullptr.
 	 */
 	Iterator end() const { return Iterator{nullptr}; }
 	/**
 	 * @brief Used to begin an iteration on the binary search tree.
-	 * @return ConstIterator A constant iterator to the leftmost node of the tree.
-	 * aka the one with the lowest key value.
+	 * @return ConstIterator A constant iterator to the node with the lowest key.
 	 */
 	ConstIterator cbegin() const;
 	/**
-	 * @brief Used to finish an iteration on the binary search tree.
-	 * @return ConstIterator Returns a constant iterator to nullptr.
+	 * @brief Used to end an iteration on the binary search tree.
+	 * @return ConstIterator A constant iterator to nullptr.
 	 */
 	ConstIterator cend() const { return ConstIterator{nullptr}; }
 
 	/**
-	 * @brief Copy assignment for binary search tree.
-	 * @param bst The binary search tree to be copied into an existing one.
-	 * @return BinarySearchTree& The modified existing tree.
+	 * @brief Copy assignment for the binary search tree.
+	 * @param bst The BST to be copied into an existing one.
+	 * @return BST& The modified binary search tree.
 	 */
 	BST& operator=(const BST& bst);
 	/**
-	 * @brief Move assignment for binary search tree.
-	 * @param bst The binary search tree to be moved into an existing one.
-	 * @return BinarySearchTree& The modified existing tree.
+	 * @brief Move assignment for the binary search tree.
+	 * @param bst The BST to be moved into an existing one.
+	 * @return BST& The modified binary search tree.
 	 */
 	BST& operator=(BST&& bst);
 	/**
-	 * @brief Operator [] to access a node value in the tree or insert a new one.
+	 * @brief Operator [] to access a node value in the tree.
 	 * @param key The key of the node which value should be accessed.
-	 * @return TValue& The value of the accessed node.
+	 * @return TV& The value of the accessed node.
 	 */
 	TV& operator[](const TK& key);
 	/**
-	 * @brief Constant implementation of operator [] to access a node value in the tree or insert a new one.
+	 * @brief Constant implementation of operator [] to access a node value in the tree.
 	 * @param key The key of the node which value should be accessed.
-	 * @return TValue& The value of the accessed node.
+	 * @return TV& The value of the accessed node.
 	 */
 	const TV& operator[](const TK& key) const;
 	/**
 	 * @brief Operator << to print the binary search tree in ascending key order.
 	 * @param os The output stream to which the strings to be printed are appended.
-	 * @param bst The binary search tree instance to be printed.
+	 * @param bst The BST instance to be printed.
 	 * @return std::ostream& The output stream to which strings have been appended.
 	 */
 
@@ -191,7 +198,7 @@ public:
 	}
 };
 
-#include "BST_NestedClasses.hxx"
-#include "BST_Methods.hxx"
+#include "BSTNestedClasses.hxx"
+#include "BSTMethods.hxx"
 
 #endif //BST_H__
