@@ -33,34 +33,34 @@ a constant access to member variables.
 
 ## Methods
 
-+ Constructors for the class Node:
-- using a pair of values, 
-- using a parent and possibly another node (copy constructor).
+- Constructors for the class Node:
+  - using a pair of values, 
+  - using a parent and possibly another node (copy constructor).
 
-+ The iterators notably have an overloading of the operator* which returns a pointer to the node.
+- The iterators notably have an overloading of the operator* which returns a pointer to the node.
 
-+ The method *getNode* was added in order to retrive the Node pointed by the iterator and is defined as private in order not to expose the Node class.
+- The method *getNode* was added in order to retrive the Node pointed by the iterator and is defined as private in order not to expose the Node class.
 
-+ BST methods:
+- BST methods:
 
-- Copy and move semantic, implemented as constructors and overloadings of operator=. 
+  - Copy and move semantic, implemented as constructors and overloadings of operator=. 
 This allows us to perform deep copies of a tree or moving its elements into another tree structure. 
 It make use of the *copy* recursive method to perform the insertion.
 
-- **insert**, this method insert a node in the BST given a key-value pair. If the tree is empty, it insert the root node. If a key is already present, it replace the old value with the new one.
+  - **insert**, this method insert a node in the BST given a key-value pair. If the tree is empty, it insert the root node. If a key is already present, it replace the old value with the new one.
 
-- **clear**, this method clears the content of the tree. It leverages unique pointers, avoiding the use of recursion.
+  - **clear**, this method clears the content of the tree. It leverages unique pointers, avoiding the use of recursion.
 
-- **balance** performs a non-in-place balancing of the tree. 
+  - **balance** performs a non-in-place balancing of the tree. 
 The ordered keys are store in a standard vector and reordered using a recursive bisection. Then the tree is cleared and the function *rebuildBalancedTree* is used to rebuild the tree according to the order dictated by the balanced vector. This method relies strongly on iterators and unique pointers.
 
-- **find**, this methos finds a given key and return an iterator to that node.
+  - **find**, this methos finds a given key and return an iterator to that node.
 
-- **printStructure** (additional) allows the user to visualize the tree structure in a graphic way. For visualize the order in a sequential way we used the overloading of operator<<.
+  - **printStructure** (additional) allows the user to visualize the tree structure in a graphic way. For visualize the order in a sequential way we used the overloading of operator<<.
 
-- **begin** (**cbegin**) and **end** (**cend**) are the methods used to provide starting and stopping conditions to the forward iteration inside the tree.
+  - **begin** (**cbegin**) and **end** (**cend**) are the methods used to provide starting and stopping conditions to the forward iteration inside the tree.
 
-- **operator[]** is used both to access and change the value of a specific node based on its key value.
+  - **operator[]** is used both to access and change the value of a specific node based on its key value.
 
 ## Tests
 The file *BST_Test.cpp* is used to observe different behaviours of the BST. It compares different constructors, it tries different types for the template, and in general it tests all the functions defined above.
