@@ -7,11 +7,11 @@ Description: Implementation of the PostcardList class.
 import datetime
 
 
-class PostcardList: 
+class PostcardList:
     '''
     Class PostcardList reads/writes postcard messages from/to a properly
     formatted file:
-        date: $(DATE); from: $(SENDER); to: $(RECEIVER);
+    date: $(DATE); from: $(SENDER); to: $(RECEIVER);
     '''
 
     def __init__(self):
@@ -25,40 +25,28 @@ class PostcardList:
         # A dictionary storing postcard senders, the key is a string denoting the sender, the value is a list of indexes.
         self._from = {}
         # A dictionary storing postcard receivers, the key is a string denoting the receiver, the value is a list of indexes.
-        self._to = {}    
-    
+        self._to = {}
 
-
-    # cosa devono fare questi metodi write??
-    def writeFile(self):
-        file = open(self._file,"w")
+    def writeFile(self, filename):
+        '''
+        It writes to a file the postcards stored in self._postcards. If the file already exists, it is overwritten.
+        '''
+        files = open(filename,"w+") # 'w' option creates a new file named filename, the + creates a new file if it already exists
         for postcard in self._postcards:
-            file.write("%s\n" % postcard)             
-        file.close()
-            
-
-
+        	files.write("%s\n" % postcard)
+        files.close()
+        
     def readFile(self, path_to_file):
-        '''
-        Receive as input a path to a file, read the postcards stored in it and
-        this values in the _postcards list
-    
-        '''
         self._file = path_to_file
-
         file = open(self._file, "r")
         for line in file:
-            self._postcards.append(line)
+        	self._postcards.append(line)
         file.close()
-
         self.parsePostcards()
         
-    
-
     def parsePostcards(self):
         '''
-        Parses _postcards, extracts information about date, sender and receiver and stores it
-        in the respective dictionaries: _date, _from, _to
+        Parses _postcards, extracts information about date, sender and receiver and stores it in the respective dictionaries: _date, 		_from, _to
         ''' 
         for ind,p in enumerate(self._postcards):
             date, sender, receiver, _ = p.split(';')
@@ -76,36 +64,31 @@ class PostcardList:
             self._from[sender].append(ind)
             if receiver not in self._to:
                 self._to[receiver] = []
-            self._to[receiver].append(ind)       
-
+            self._to[receiver].append(ind)
 
     def updateFile(self, new_file):
-    
-        old_file = open(self._file, "w")
-        new_lines = open(new_file, "r")
-        for post in new_lines:
-            old_file.write(post)
-        old_file.close()
-        new_lines.close()
-    
-    
+        '''
+        It writes to a file the postcards stored in self._postcards. If 	the file already exists, the new content is appended to it.
+        '''
+        file = open(new_file,"a+") # 'a' oprion is to append lines to a given file, the + creates a new file if it already exists
+        for postcard in self._postcards:
+    	    file.write("%s\n" % postcard)
+        file.close()
+
     def updateLists(self, new_file):
         '''
         Updates the _postcards list when new postcards are received
         '''
         list_new_lines = list(open(new_file,"r"))
         self._postcards + list_new_lines
-
         self.parsePoscards()
-        
-    
+
     def getNumberOfPostcards(self):
         '''
         Return the overall number of postcards
         '''
         return len(self._postcards)
-    
-    
+
     def getPostcardsByDateRange(self, date_range):
         '''
         Returns the postcards within a date_range
@@ -115,7 +98,6 @@ class PostcardList:
             if date_range[0] <= i <= date_range[1]:
                 for j in self._date[i]:
                     post_by_date.append(self._postcards[j])
-
         return post_by_date
 
     def getPostcardsBySender(self, sender):
@@ -123,7 +105,6 @@ class PostcardList:
         Returns the postcards from a specific sender
         '''
         post_by_sender = []
-
         if sender in self._from:
             for index in self._from[sender]:
                 post_by_sender.append(self._postcards[index])

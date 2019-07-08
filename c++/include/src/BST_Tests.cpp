@@ -36,6 +36,7 @@ int main()
         bst.insert(pair9);        
 
         // Print the BST as ordered list
+        std::cout << "Original unbalanced BST" << std::endl;
         std::cout << bst << std::endl;
 
         // Print the BST structure
@@ -44,6 +45,7 @@ int main()
         // Test the balance method
         bst.balance();
 
+        std::cout << "Balanced BST" << std::endl;
         std::cout << bst << std::endl;
 
         bst.printStructure(std::to_string, "-", ' ');
@@ -53,19 +55,30 @@ int main()
         int key = 13;
         std::cout << "The value associated to key " << key << " is " << bst[key] << std::endl;
 
+        // Test copy and move constructors
+
+        BST<int,int> copy_bst = bst;
+        BST<int,int> move_bst = std::move(bst);
+
+        std::cout << "Testing copy constructor" << std::endl;
+        std::cout << copy_bst << std::endl;
+        std::cout << "Testing move constructor" << std::endl;
+        std::cout << move_bst << std::endl;
 
          // Testing operator=
         BST<int,int> bst_1{};
         bst_1 = bst;
+        std::cout << "Testing operator=" << std::endl;
         std::cout << bst_1 << std::endl;
 
         // Testing the move semantics
+        std::cout << "Testing move semantics" << std::endl;
         BST<int,int> bst_2{};
         bst_2 = std::move(bst);
         std::cout << bst_2 << std::endl;
 
         // Test the clear method
-
+        std::cout << "Testing the clear method" << std::endl;
         bst_2.clear();
         std::cout << bst_2 << std::endl;
         std::cout << bst << std::endl;
@@ -74,7 +87,6 @@ int main()
         std::cout << bst_1 << std::endl;
         std::cout << bst << std::endl;
 
-        
 
         
 }
