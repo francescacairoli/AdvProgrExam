@@ -78,12 +78,12 @@ public:
 	 * 
 	 * The constructor uses the recursive private copy method.
 	 */
-	BST(const BST& bst) { copy(bst.root); }
+	BST(const BST& bst): size{1}, height{1} {copy(bst.root);}
 	/**
 	 * @brief Move constructor for the binary search tree.
 	 * @param bst The binary search tree to be moved into a new one.
 	 */
-	BST(BST&& bst) noexcept : root{std::move(bst.root)} {}
+	BST(BST&& bst) noexcept : root{std::move(bst.root)}, size{1}, height{1} {}
 
 	/** 
 	 * @brief Return the number of nodes in the binary search tree.

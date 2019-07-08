@@ -19,6 +19,8 @@ int main()
         std::pair<int, int> pair7{7,7};
         std::pair<int, int> pair8{14,14};
         std::pair<int, int> pair9{13,13};
+
+        std::pair<int, int> pair3_bis{10,3};
         
         // Printing the empty BST
         BST<int,int> bst{};
@@ -33,7 +35,10 @@ int main()
         bst.insert(pair6);
         bst.insert(pair7);
         bst.insert(pair8);
-        bst.insert(pair9);        
+        bst.insert(pair9);  
+
+        // Inserting a node with a key already present: expect overwrite
+        bst.insert(pair3_bis);      
 
         // Print the BST as ordered list
         std::cout << "Original unbalanced BST" << std::endl;
