@@ -66,7 +66,7 @@ The ordered keys are store in a standard vector and reordered using a recursive 
 
 As starter, we compiled our code with the flags `-Wall -Wextra` in order to be sure of not getting any warning. We also checked not to have any memory leak, using the following command `valgrind -v ./tests.o`.
 
-```bash
+```
 ==16681== HEAP SUMMARY:
 ==16681==     in use at exit: 0 bytes in 0 blocks
 ==16681==   total heap usage: 34 allocs, 34 frees, 74,840 bytes allocated
@@ -78,6 +78,49 @@ As starter, we compiled our code with the flags `-Wall -Wextra` in order to be s
 ```
 
 The file *BST_Test.cpp* is used to test the correctness of the BST. It compares different constructors, it tries different types for the template, and in general it tests all the functions defined above.
+
+```
+Original unbalanced BST     
+
+// operator<<
+1: 1
+3: 3
+4: 4
+6: 6
+7: 7
+8: 8
+10: 3
+13: 13
+14: 14
+
+// printStructure
+       8               
+   3       10       
+ 1   6   -   14   
+- - 4 7 - - 13 - 
+```
+
+```
+Balanced BST
+
+// operator<<
+1: 1
+3: 3
+4: 4
+6: 6
+7: 7
+8: 8
+10: 3
+13: 13
+14: 14
+
+// printStructure
+       7               
+   3       10       
+ 1   4   8   13   
+- - - 6 - - - 14 
+
+```
 
 ## Performances
 In order to measure the look-up performaces, we performed various tests on our *find* method.
