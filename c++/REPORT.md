@@ -63,10 +63,24 @@ The ordered keys are store in a standard vector and reordered using a recursive 
   - **operator[]** is used both to access and change the value of a specific node based on its key value.
 
 ## Tests
-The file *BST_Test.cpp* is used to observe different behaviours of the BST. It compares different constructors, it tries different types for the template, and in general it tests all the functions defined above.
+
+As starter, we compiled our code with the flags `-Wall -Wextra` in order to be sure of not getting any warning. We also checked not to have any memory leak, using the following command `valgrind -v ./tests.o`.
+
+```bash
+==16681== HEAP SUMMARY:
+==16681==     in use at exit: 0 bytes in 0 blocks
+==16681==   total heap usage: 34 allocs, 34 frees, 74,840 bytes allocated
+==16681== 
+==16681== All heap blocks were freed -- no leaks are possible
+==16681== 
+==16681== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==16681== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+
+The file *BST_Test.cpp* is used to test the correctness of the BST. It compares different constructors, it tries different types for the template, and in general it tests all the functions defined above.
 
 ## Performances
-In order to measure the look-up performaces, we performed various tests on our *find* method in the BST class.
+In order to measure the look-up performaces, we performed various tests on our *find* method.
 
 First of all, we defined two unbalanced trees having int and double as key values. 
 We compared their behaviour with the one of an **int map** object by increasing gradually the number of elements.
