@@ -1,11 +1,12 @@
 # Introduction
 
-The purpose of the assigned C++ project is to implement a templated binary search tree, complete with iterators.
+The purpose of the assigned project is to implement a templated binary search tree in C++ language. A binary search tree is a hierarchical data structure, order according to the keys: each node in the tree as a key and a value, a smaller key is found in the left child, whereas a larger key is found in the right child.
 The final goal is to compare the behavior of my custom implementation, either in a balanced or unbalanced situation, 
 with the behaviour of the map and unordered_map standard libraries. 
 
 ## Code structure
 
+The class BST implement the structure of our custom binary search tree, templated on the type of the key and the type of the values associated to nodes residing in it.
 The BST class relies on a nested class, called Node, defined by a template pair of a key and a value. 
 Allowing nodes to have a template type for the keys-value pair, results in the possibility of building
 template trees, that is, trees with different types of nodes.
@@ -46,14 +47,20 @@ a constant access to member variables.
 This allows us to perform deep copies of a tree or moving its elements into another tree structure. 
 It make use of the *copy* recursive method to perform the insertion.
 
-- *balance* performs a recursive insertion of elements through bisection on a vector containing the ordered keys. 
-It relies strongly on iterators and unique pointers. It uses the function *rebuildBalancedTree*.
+- **insert**, this method insert a node in the BST given a key-value pair. If the tree is empty, it insert the root node. If a key is already present, it replace the old value with the new one.
 
-- *printStructure* (additional) allows the user to visualize the tree structure in a graphic way. For visualize the order in a sequential way we used the overloading of operator<<.
+- **clear**, this method clears the content of the tree. It leverages unique pointers, avoiding the use of recursion.
 
-- *begin* (*cbegin*) and *end* (*cend*) are the methods used to provide starting and stopping conditions to the forward iteration inside the tree.
+- **balance** performs a non-in-place balancing of the tree. 
+The ordered keys are store in a standard vector and reordered using a recursive bisection. Then the tree is cleared and the function *rebuildBalancedTree* is used to rebuild the tree according to the order dictated by the balanced vector. This method relies strongly on iterators and unique pointers.
 
-- *operator[]* is used both to access and change the value of a specific node based on its key value.
+- **find**, this methos finds a given key and return an iterator to that node.
+
+- **printStructure** (additional) allows the user to visualize the tree structure in a graphic way. For visualize the order in a sequential way we used the overloading of operator<<.
+
+- **begin** (**cbegin**) and **end** (**cend**) are the methods used to provide starting and stopping conditions to the forward iteration inside the tree.
+
+- **operator[]** is used both to access and change the value of a specific node based on its key value.
 
 ## Tests
 The file *BST_Test.cpp* is used to observe different behaviours of the BST. It compares different constructors, it tries different types for the template, and in general it tests all the functions defined above.
