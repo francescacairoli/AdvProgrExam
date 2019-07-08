@@ -65,14 +65,14 @@ First of all, we defined two unbalanced trees having int and double as key value
 We compared their behaviour with the one of an **int map** object by increasing gradually the number of elements.
 The result is presented in the following plot:
 
-![bla](https://github.com/francescacairoli/AdvProgrExam/tree/master/c%2B%2B/tests/graphic_results/IntDoubleComparison.png)
+![alt pic1](https://github.com/francescacairoli/AdvProgrExam/blob/master/c%2B%2B/tests/graphic_results/IntDoubleComparison.png) 
 
 
 We notice that, when the BST has double nodes, its performances resemble map. On the contrary the BST with int nodes is much slower. This behaviour may depend on comparison time: bitwise comparisons are performed much faster on double values rather than integers.
 
 Second of all, we compare balanced and unbalanced instances of our class and the map, which has an unordered equivalent named unordered_map. All the trees were set with int nodes.
 
-![bla bla](https://github.com/francescacairoli/AdvProgrExam/tree/master/c%2B%2B/tests/graphic_results/MapComparison.png)
+![alt pic2](https://github.com/francescacairoli/AdvProgrExam/blob/master/c%2B%2B/tests/graphic_results/MapComparison.png) 
 
 
 
