@@ -1,4 +1,4 @@
-# Python - Postcards
+# Python - PostcardList
 
 ## Introduction
 
