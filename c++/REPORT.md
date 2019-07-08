@@ -16,7 +16,9 @@ However, we placed the struct nested inside the tree and set it as private, in o
 The Node's key is set as constant in order to prevent any user to modify its value and thus corrupt
 the inner structure of the tree. A node contains three pointers: one points to its parent node and the remaining two point 
 to its children. For the pointers to children nodes we used the *unique_ptr* class defined in the standard library.
-We expect this choice to facilitate the management of the memory and to improve the consistence of the operations on the tree.
+We expect this choice to facilitate the management of the memory and to improve the consistence of the operations on the tree. In fact, pointers can be problematic, in particular during node deletion: we don't want to leave behind any orphan node, which causes memory leaks and dangling references.
+A unique_ptr holds a pointer to an object and deletes this object when the unique_ptr<> object is deleted. In addition, unique pointers allow to use the move semantics.
+
 
 BST has three member variables: 
 - **root** which is a private unique pointer to its root node,
