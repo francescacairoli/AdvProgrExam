@@ -1,5 +1,7 @@
 # Python - Postcards
 
+## Introduction
+
 The purpose of the assigned project is to implement a PostcardList class. 
 This class should read/write Postcard messages from/to a properly formatted
 file, in which each line is a Postcard.
