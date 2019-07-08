@@ -8,4 +8,4 @@ The **c++** folder is organized as follows:
 - it contains a custom implementation of a templated binary search tree, I tested both the correctness and the performance of the code against the standard map library. The folder contains a short report and a readme explaining the contents of the code.
 
 The **python** folder is organized as follows:
-- the PostcardList class was implemented to read and write postcard addresses on text files. The folder also contains the unit tests file provided in the exercise assignemnts.
+- the PostcardList class, contained in *myPostcards.py*, aims at reading and writing postcard addresses on text files. The folder also contains the unit tests file provided in the exercise assignemnts.
