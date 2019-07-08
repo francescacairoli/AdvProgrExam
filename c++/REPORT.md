@@ -49,31 +49,33 @@ It make use of the *copy* recursive method to perform the insertion.
 - *balance* performs a recursive insertion of elements through bisection on a vector containing the ordered keys. 
 It relies strongly on iterators and unique pointers. It uses the function *rebuildBalancedTree*.
 
-- printOrderedList and printTree, which allows the user to visualize the tree structure respectively in a sequential and in a graphic way. They are used for the overloading of operator<< and the default between them can be specified as argument on compile time.
+- *printStructure* (additional) allows the user to visualize the tree structure in a graphic way. For visualize the order in a sequential way we used the overloading of operator<<.
 
-begin and end, which are the methods used to provide stopping conditions to the forward iteration inside the tree.
+- *begin* (*cbegin*) and *end* (*cend*) are the methods used to provide starting and stopping conditions to the forward iteration inside the tree.
 
-compare, which is a functional object used to perform templated comparisons between node keys. It is used to allow custom rearrangements of the tree order by the user.
+- *operator[]* is used both to access and change the value of a specific node based on its key value.
 
-operator[], which is used both to access and change the value of a specific node based on its key value.
+## Tests
+The file *BST_Test.cpp* is used to observe different behaviours of the BST. It compares different constructors, it tries different types for the template, and in general it tests all the functions defined above.
 
-Tests
-We created a file BinarySearchTreeTest.cpp in which we compared different constructors, using different types for the templates, and in general all the functions defined in the methods section.
+## Performances
+In order to measure the look-up performaces, we performed various tests on our *find* method in the BST class.
 
-Benchmarks
-We performed various performance tests on our BinarySearchTree class find method.
+First of all, we defined two unbalanced trees having int and double as key values. 
+We compared their behaviour with the one of an **int map** object by increasing gradually the number of elements.
+The result is presented in the following plot:
 
-First of all, we defined two unbalanced trees having int and double as key values. We compared their behaviour with the one of an int map object by increasing gradually the number of elements. The result is presented in the following plot:
-
-
-
-It is evident how a BinarySearchTree with double nodes have a behaviour which is consistent with the one of map, while the int one is much slower. We think that behavior could be explained by the rapidity in which the two values are compared, since a bitwise comparison can be performed much faster on double values rather than integers.
-
-After that, we choose to compare ordered and unordered instances of our class and of map, which has an unordered equivalent named unordered_map, all having integer nodes. We performed two comparisons, in which we used both -O0 and -O3 optimization. The results obtained are presented in the graphs below:
+PLOT 1
 
 
+We notice that, when the BST has double nodes, its performances resemble map. On the contrary the BST with int nodes is much slower. This behaviour may depend on comparison time: bitwise comparisons are performed much faster on double values rather than integers.
+
+Second of all, we compare balanced and unbalanced instances of our class and the map, which has an unordered equivalent named unordered_map. All the trees were set with int nodes.
+
+PLOT 2
 
 
 
-In both cases we can see how our unordered BinarySearchTree has the worst performances, while the unordered map object achieves the best overall time. This is due to the fact that the find method in the unordered map makes the access to elements faster, despite it being unordered. In both cases our balanced tree achieved performances that are very similar to those of map, sometimes being even faster than the latter. This could be explained by our simpler implementation of the class, which may enable the compiler to perform more aggressive optimizations, speeding up the research. Overall, we can be satisfied with our implementation.
+
+We notice how our unbalanced BST has the worst performances, while the unordered map object achieves the best ones. This is due to the fact that the find method in the unordered_map makes the access to elements faster, despite it being unordered. Our balanced tree achieved performances that are very similar to those of map, even a little bit faster. This could be explained by our simpler implementation of the class, which may enable the compiler to perform more aggressive optimizations, speeding up the research.
 
