@@ -26,7 +26,7 @@ The **readFile** method is used to read line by line the content of a file
 and to store it in the list self._postcards.
 For subsequent readings, we should use the **updateList** method, which appends the new lines read from a file to the existing ones already stored in the postcards list. 
 
-Everytime we read or update, we should also call **parsePostcards**, which parses the list and sets accordingly the three dictionaries _date, _from and _to. 
+Every time we read or update, we should also call **parsePostcards**, which parses the list and sets accordingly the three dictionaries _date, _from and _to. 
 In particular, the dictionaries are useful to retrieve information about all the postcards respectively sent by a given sender (by means of the function **getPostcardsBySender**), 
 received by a given receiver (**getPostcardsByReceiver**), 
 sent within a given date range (**getPostcardsByDateRange**). 
