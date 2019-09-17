@@ -1,6 +1,6 @@
 # Introduction
 
-The purpose of the assigned project is to implement a templated binary search tree in C++ language. A binary search tree is a hierarchical data structure, order according to the keys: each node in the tree as a key and a value, a smaller key is found in the left child, whereas a larger key is found in the right child.
+The purpose of the assigned project is to implement a templated binary search tree in C++ language. A binary search tree is a hierarchical data structure, ordered according to the keys: each node in the tree as a key and a value, a smaller key is found in the left child, whereas a larger key is found in the right child.
 The final goal is to compare the behavior of my custom implementation, either in a balanced or unbalanced situation, 
 with the behaviour of the map and unordered_map standard libraries. 
 
