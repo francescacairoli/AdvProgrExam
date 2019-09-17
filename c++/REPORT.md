@@ -56,7 +56,7 @@ It make use of the *copy* recursive method to perform the insertion.
   - **balance** performs a non-in-place balancing of the tree. 
 The ordered keys are store in a standard vector and reordered using a recursive bisection. Then the tree is cleared and the function *rebuildBalancedTree* is used to rebuild the tree according to the order dictated by the balanced vector. This method relies strongly on iterators and unique pointers.
 
-  - **find**, this methos finds a given key and return an iterator to that node.
+  - **find**, this method finds a given key and return an iterator to that node.
 
   - **printStructure** (additional) allows the user to visualize the tree structure in a graphic way. For visualize the order in a sequential way we used the overloading of operator<<.
 
