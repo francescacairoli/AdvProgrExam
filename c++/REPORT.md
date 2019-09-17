@@ -12,7 +12,7 @@ Allowing nodes to have a template type for the keys-value pair, results in the p
 template trees, that is, trees with different types of nodes.
 
 We defined the **Node** as a *struct* because we want all its methods and variables to be public for the tree to use. 
-However, we placed the struct nested inside the tree and set it as private, in order not to exposed it to the user. 
+However, we placed the struct nested inside the tree and set it as private, in order not to expose it to the user. 
 The Node's key is set as constant in order to prevent any user to modify its value and thus corrupt
 the inner structure of the tree. A node contains three pointers: one points to its parent node and the remaining two point 
 to its children. For the pointers to children nodes we used the *unique_ptr* class defined in the standard library.
