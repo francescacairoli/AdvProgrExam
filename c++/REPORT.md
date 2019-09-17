@@ -49,7 +49,7 @@ a constant access to member variables.
 This allows us to perform deep copies of a tree or moving its elements into another tree structure. 
 It make use of the *copy* recursive method to perform the insertion.
 
-  - **insert**, this method insert a node in the BST given a key-value pair. If the tree is empty, it insert the root node. If a key is already present, it replace the old value with the new one.
+  - **insert**, this method inserts a node in the BST given a key-value pair. If the tree is empty, it insert the root node. If a key is already present, it replace the old value with the new one.
 
   - **clear**, this method clears the content of the tree. It leverages unique pointers, avoiding the use of recursion.
 
