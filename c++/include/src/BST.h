@@ -67,11 +67,13 @@ public:
 	 * @brief Default constructor for the binary search tree.
 	 */
 	BST(): size{0}, height{0} {}
+	
 	/**
 	 * @brief Constructor for the binary search tree given a root node.
 	 * @param d The key,value pair for the root node.
 	 */
 	BST(std::pair<TK, TV> d): root{new Node{d}}, size{1}, height{1} {}
+	
 	/**
 	 * @brief Copy constructor for the binary search tree. It initializes a BST class by making a copy of an object of the same class.
 	 * @param bst The BST to be copied.
@@ -79,12 +81,12 @@ public:
 	 * The constructor uses the recursive private copy method.
 	 */
 	BST(const BST& bst): size{1}, height{1} {copy(bst.root);}
+
 	/**
 	 * @brief Move constructor for the binary search tree.
 	 * @param bst The binary search tree to be moved into a new one.
 	 */
 	BST(BST&& bst) noexcept : root{std::move(bst.root)}, size{1}, height{1} {}
-
 
 	/**
 	 * @brief default destructor 
