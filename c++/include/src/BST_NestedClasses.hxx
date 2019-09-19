@@ -60,7 +60,7 @@ struct BST<TK, TV>::Node
 	/**
 	 * @brief  Utility recursive function that returns a pointer to first right ancestor. 
 
-	 If the current node is the left child of its parent ir return parent, otherwise it check wheter parent is a left child of its own parent.
+	 If the current node is the left child of its parent it returns parent, otherwise it checks wheter parent is a left child of its own parent.
 	 The procedure terminates when an ancestor is found to be the left child of its own parent, otherwise a nullptr is returned.
 	 */
 	Node* firstrightancestor() noexcept {
