@@ -112,7 +112,7 @@ public:
 	 * If a node with the same key is already present inside the tree, 
 	 * the insert method substitute the value associated to that key with the new one. 
 	 */
-	void insert(std::pair<TK, TV> kv);
+	void insert(const std::pair<TK, TV> kv);
 	/**
 	 * @brief Clears all the elements of the tree
 	 */

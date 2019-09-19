@@ -39,7 +39,7 @@ void BST<TK, TV>::rebuildBalancedTree(std::vector< std::pair<TK,TV> > &v, int st
 // Public methods
 
 template <class TK,class TV>
-void BST<TK, TV>::insert(std::pair<TK, TV> kv){
+void BST<TK, TV>::insert(const std::pair<TK, TV> kv){
     int h = 1;
     Node * parent = root.get();
     if( !parent ) {root.reset(new Node{kv});}// if tree is empty insert node as root
