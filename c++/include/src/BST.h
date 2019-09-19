@@ -88,14 +88,14 @@ public:
 	/** 
 	 * @brief Return the number of nodes in the binary search tree.
 	 */
-	int getSize() { return size; }
+	int getSize() const noexcept { return size; }
 
 	/** 
 	 * @brief Return the number of generations of the binary search tree
 	 *
 	 * The height is required for graphical purposes.
 	 */
-	int getHeight() { return height; }
+	int getHeight() const noexcept { return height; }
 
 	/**
 	 * @brief Insert a new node in the binary search tree.
