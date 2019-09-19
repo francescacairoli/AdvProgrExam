@@ -24,7 +24,7 @@ The Makefile has been created to automatically compile the BST code. In particul
 generates a *test.o* executable that encompasses all the tests we performed to the implementation of the BST class.
 
 The command 
-`make perfprmances.o `
+`make performances.o `
 generates a benchmark.o executable that measures the performances of my implementation (the execution time is quite long).
 
 The command `make docs` generates the documentation inside the docs folder. 
