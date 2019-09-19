@@ -53,7 +53,7 @@ struct BST<TK, TV>::Node
 	/**
 	 * @brief  Utility recursive function that returns a pointer to the lestmost node, i.e., the node with the lowest key.
 	 */
-	Node* leftmostdescent(){
+	Node* leftmostdescent() noexcept {
 		if(left) return left->leftmostdescent();
 		return this;
 	}
@@ -63,7 +63,7 @@ struct BST<TK, TV>::Node
 	 If the current node is the left child of its parent ir return parent, otherwise it check wheter parent is a left child of its own parent.
 	 The procedure terminates when an ancestor is found to be the left child of its own parent, otherwise a nullptr is returned.
 	 */
-	Node* firstrightancestor(){
+	Node* firstrightancestor() noexcept {
 		if(parent)
 			if(parent->right.get()==this)
 				return parent->firstrightancestor();
