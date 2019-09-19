@@ -85,6 +85,12 @@ public:
 	 */
 	BST(BST&& bst) noexcept : root{std::move(bst.root)}, size{1}, height{1} {}
 
+
+	/**
+	 * @brief default destructor 
+	 */
+    ~BST() noexcept = default;
+
 	/** 
 	 * @brief Return the number of nodes in the binary search tree.
 	 */
