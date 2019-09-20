@@ -25,7 +25,7 @@ generates a *test.o* executable that encompasses all the tests we performed to t
 
 The command 
 `make performances.o `
-generates a benchmark.o executable that measures the performances of my implementation (the execution time is quite long).
+generates a performances.o executable that measures the performances of my implementation (the execution time is quite long).
 
 The command `make docs` generates the documentation inside the docs folder. 
 
