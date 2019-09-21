@@ -116,7 +116,7 @@ void BST<TK, TV>::balance()
 }
 
 template <class TK,class TV>
-typename BST<TK, TV>::Iterator BST<TK, TV>::begin() const
+typename BST<TK, TV>::Iterator BST<TK, TV>::begin()
 { 
     if(!root) return end();
 
@@ -144,7 +144,7 @@ BST<TK, TV>& BST<TK, TV>::operator=(const BST& bst)
 }
 
 template <class TK,class TV>
-BST<TK, TV>& BST<TK, TV>::operator=(BST&& bst)
+BST<TK, TV>& BST<TK, TV>::operator=(BST&& bst) noexcept
 {
     root = std::move(bst.root);
     return *this;
