@@ -152,12 +152,12 @@ public:
 	 * @brief Used to begin an iteration on the binary search tree.
 	 * @return Iterator An iterator to the node with the lowest key. 
 	 */
-	Iterator begin() const;
+	Iterator begin();
 	/**
 	 * @brief Used to end an iteration on the binary search tree.
 	 * @return Iterator An iterator to nullptr.
 	 */
-	Iterator end() const { return Iterator{nullptr}; }
+	Iterator end() { return Iterator{nullptr}; }
 	/**
 	 * @brief Used to begin an iteration on the binary search tree.
 	 * @return ConstIterator A constant iterator to the node with the lowest key.
@@ -180,7 +180,7 @@ public:
 	 * @param bst The BST to be moved into an existing one.
 	 * @return BST& The modified binary search tree.
 	 */
-	BST& operator=(BST&& bst);
+	BST& operator=(BST&& bst) noexcept;
 	/**
 	 * @brief Operator [] to access a node value in the tree.
 	 * @param key The key of the node which value should be accessed.
